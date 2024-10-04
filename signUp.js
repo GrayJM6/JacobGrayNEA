@@ -1,0 +1,94 @@
+function setup(){
+    createCanvas(800,800);
+    background(175,238,238)
+  }
+  
+  function draw(){
+    let uNBox;
+    let pWordBox;
+    let pConBox;
+    let goBack;
+    fill(70,130,180)
+    goBack = rect(0,0,100,50)
+    fill(255)
+    textSize(20)
+    text('Go Back', 10, 25)
+    fill(70,130,180)
+    rect(70,200,150,25)
+    rect(70,250,150,25)
+    rect(70,300,150,50)
+    rect(235,200,425,25)
+    rect(235,250,425,25)
+    rect(235,300,425,50)
+  
+  
+    fill(255)
+    textSize(24)
+    text('Username:', 75, 222)
+    text('Password:', 75, 272)
+    text('Confirm', 75, 322)
+    text('Password:',75,345)
+  
+    text(username, 250, 222);
+    text(password, 250, 272);
+    text(confirmPassword, 250, 322);
+  
+  }
+  
+  let username = prompt("Enter username - case sensitive");
+  let password = prompt("Enter password - case sensitive");
+  let confirmPassword = prompt("Confirm password - case sensitive");
+  
+  if(password == confirmPassword){
+    console.log("Passwords match");
+  }
+  else{
+    console.log("Passwords do not match");
+  }
+  
+  
+  function mousePressed() {
+    if(mouseX>0 && mouseX<100 && mouseY>0 && mouseY<50){
+      goBack()
+    }
+  }
+  
+  function goBack(){
+    window.location.href = "index.html";
+  }
+  
+  // let myInputEvent;
+  // let myInputEvent2;
+  
+  
+  // uNBox = createInput('');
+  // uNBox.position(250,210);
+  // uNBox.size(400);
+  // uNBox.input(myInputEvent);
+  
+  // uNBox.input(myInputEvent => {
+  //   if (myInputEvent.value === 'admin') {
+  //     console.log("Correct!");
+  //   }
+  // });
+  
+  
+  
+  
+  // pWordBox = createInput('');
+  // pWordBox.position(250,260);
+  // pWordBox.size(400);
+  // pWordBox.input(myInputEvent2);
+  
+  
+  
+  
+  // let myInputEvent;
+  // let inputBox = createInput('');
+  // inputBox.position(250, 210);
+  // inputBox.size(400);
+  // inputBox.input(myInputEvent => {
+  //   if (myInputEvent.value === 'admin') {
+  //     console.log("Correct!");
+  //   }
+  // });
