@@ -4,8 +4,6 @@ function setup(){
   }
   
   function draw(){
-    let uNBox;
-    let pWordBox;
     let goBack;
   
     fill(70,130,180)
@@ -24,23 +22,38 @@ function setup(){
   
     fill(255)
     textSize(24)
-    text('Username:', 75, 222)
-    text('Password:', 75, 272)
+    text('Username:', 75, 222);
+    text('Password:', 75, 272);
+    text(username, 250, 222);
+    text(password, 250, 272);
+
   
-  
+    fill(70,130,180)
+    rect(200,600,400,60);
+    fill(255)
+    text('PROCEED', 340, 635)
   }
-  
-  let username = prompt("enter username - case sensitive")
-  text(username, 250, 222)
-  let password = prompt("enter password - case sensitive")
-  text(password, 250, 272)
+
+let username;
+let password;
+
+
+ 
   
     function mousePressed() {
       if(mouseX>0 && mouseX<100 && mouseY>0 && mouseY<50){
         goBack()
       }
-  }
-  
+      else if(mouseX>200 && mouseX<600 && mouseY>600 & mouseY<660){
+          window.location.href = "title.html";
+       }
+       else if(mouseX>235 && mouseX<660 && mouseY>200 && mouseY<225){
+        username = prompt("enter username - case sensitive")
+       }
+       else if(mouseX>235 && mouseX<660 && mouseY>250 && mouseY<275){
+        password = prompt("enter password - case sensitive")
+       }
+      }
     function goBack(){
       window.location.href = "index.html";
   }

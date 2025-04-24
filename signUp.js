@@ -4,15 +4,13 @@ function setup(){
   }
   
   function draw(){
-    let uNBox;
-    let pWordBox;
-    let pConBox;
     let goBack;
     fill(70,130,180)
     goBack = rect(0,0,100,50)
     fill(255)
     textSize(20)
     text('Go Back', 10, 25)
+
     fill(70,130,180)
     rect(70,200,150,25)
     rect(70,250,150,25)
@@ -20,43 +18,65 @@ function setup(){
     rect(235,200,425,25)
     rect(235,250,425,25)
     rect(235,300,425,50)
-  
-  
+
     fill(255)
     textSize(24)
     text('Username:', 75, 222)
     text('Password:', 75, 272)
     text('Confirm', 75, 322)
     text('Password:',75,345)
-  
     text(username, 250, 222);
     text(password, 250, 272);
     text(confirmPassword, 250, 322);
   
+    if(passMatch == true){
+      fill(70,130,180)
+      rect(200,600,400,60);
+      fill(255)
+      text('PROCEED', 340, 635)
+    }
+
+
   }
+
   
-  let username = prompt("Enter username - case sensitive");
-  let password = prompt("Enter password - case sensitive");
-  let confirmPassword = prompt("Confirm password - case sensitive");
-  
-  if(password == confirmPassword){
-    console.log("Passwords match");
-  }
-  else{
-    console.log("Passwords do not match");
-  }
-  
-  
+  let username
+  let password
+  let confirmPassword
+  let passMatch = false;
   function mousePressed() {
     if(mouseX>0 && mouseX<100 && mouseY>0 && mouseY<50){
       goBack()
     }
+    else if(mouseX>235 && mouseX<660 && mouseY>200 && mouseY<225){
+      username = prompt("enter username - case sensitive")
+     }
+     else if(mouseX>235 && mouseX<660 && mouseY>250 && mouseY<275){
+      password = prompt("enter password - case sensitive")
+     }
+     else if(mouseX>235 && mouseX<660 && mouseY>300 && mouseY<350){
+      confirmPassword = prompt("enter password again - case sensitive")
+     }
+
+    else if(mouseX>200 && mouseX<600 && mouseY>600 & mouseY<660){
+      if(passMatch == true){
+        window.location.href = "title.html";
+    }
+
   }
-  
+}
+if(password == confirmPassword){
+  console.log("Passwords match");
+  passMatch = true;
+}
+else{
+  console.log("Passwords do not match");
+}
   function goBack(){
     window.location.href = "index.html";
   }
   
+
   // let myInputEvent;
   // let myInputEvent2;
   

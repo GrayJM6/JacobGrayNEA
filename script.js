@@ -18,7 +18,7 @@ function setup(){
     text('Log In', 150, 470)
     text('Sign Up', 547.5, 470)
   
-    rect(0,750,50,50)
+
   
   }
   
@@ -33,9 +33,7 @@ function setup(){
       console.log("Sign Up Load Successful")
       SignUp()
     }
-    else if(mouseX > 0 && mouseX < 50 && mouseY > 750 && mouseY < 800){
-      window.location.href = "title.html"
-    }
+
   }
   
   function LogIn(){

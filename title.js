@@ -24,7 +24,13 @@ function setup(){
     text("Start Game", 55, 500)
     text("Rules and \nFeatures", 320, 490)
     text("Leaderboard", 570, 500)
-    rect(0,750,50,50);
+
+    fill(70,130,180)
+    rect(0,750,100,50);
+    fill(255)
+    textSize(20)
+    text('Log Out', 10, 780)
+   
   }
   function mousePressed(){
     if(mouseX>25 && mouseX<245 && mouseY>400 && mouseY<600){
@@ -36,7 +42,7 @@ function setup(){
     else if(mouseX>545 && mouseX<745 && mouseY>400 && mouseY<600){
       window.location.href = "leaderboard.html"
     }
-    else if(mouseX>0 && mouseX<50 && mouseY>750 && mouseY<800){
+    else if(mouseX>0 && mouseX<100 && mouseY>750 && mouseY<800){
       window.location.href = "index.html"
     }
   }
