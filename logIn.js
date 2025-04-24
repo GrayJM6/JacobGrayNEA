@@ -19,13 +19,20 @@ function setup(){
     rect(70,250,150,25)
     rect(235,200,425,25)
     rect(235,250,425,25)
+
+    fill(255)
+    rect(600,252.5,55,20)
+    fill(0)
+    text('Show', 602,270)
   
     fill(255)
     textSize(24)
     text('Username:', 75, 222);
     text('Password:', 75, 272);
     text(username, 250, 222);
-    text(password, 250, 272);
+    if(showPress ==1){
+      text(password, 250, 272);
+    }
 
   
     fill(70,130,180)
@@ -34,65 +41,48 @@ function setup(){
     text('PROCEED', 340, 635)
   }
 
-let username;
-let password;
+let username='';
+let password ='';
+let userEnt =0;
+let passEnt =0;
+let showPress = 0;
+// let coveredPass = password.replace(/./g, '*')
 
-
- 
-  
     function mousePressed() {
       if(mouseX>0 && mouseX<100 && mouseY>0 && mouseY<50){
         goBack()
       }
-      else if(mouseX>200 && mouseX<600 && mouseY>600 & mouseY<660){
+      else if(passEnt == 1 && userEnt == 1 && mouseX>200 && mouseX<600 && mouseY>600 & mouseY<660){
           window.location.href = "title.html";
        }
        else if(mouseX>235 && mouseX<660 && mouseY>200 && mouseY<225){
         username = prompt("enter username - case sensitive")
-       }
-       else if(mouseX>235 && mouseX<660 && mouseY>250 && mouseY<275){
+        if(username == "" || password == " "){
+          //do nothing
+        }
+        else{
+          userEnt = 1
+        }
+      }
+       else if(mouseX>235 && mouseX<600 && mouseY>250 && mouseY<275){
         password = prompt("enter password - case sensitive")
+        if(password == "" || password == " "){
+          //do nothing
+        }
+        else{
+          passEnt = 1
+        }
+ 
+       }
+       else if(showPress == 0 && mouseX>600 && mouseX< 655 && mouseY>252.5 && mouseY<272.5){
+        showPress = 1;
+       }
+       else if(showPress == 1 && mouseX>600 && mouseX< 655 && mouseY>252.5 && mouseY<272.5){
+        showPress = 0;
        }
       }
     function goBack(){
       window.location.href = "index.html";
   }
-  
-  
-    // let myInputEvent;
-    // let myInputEvent2;
-  
-  
-    // uNBox = createInput('');
-    // uNBox.position(250,210);
-    // uNBox.size(400);
-    // uNBox.input(myInputEvent);
-  
-    // uNBox.input(myInputEvent => {
-    //   if (myInputEvent.value === 'admin') {
-    //     console.log("Correct!");
-    //   }
-    // });
-  
-  
-  
-  
-    // pWordBox = createInput('');
-    // pWordBox.position(250,260);
-    // pWordBox.size(400);
-    // pWordBox.input(myInputEvent2);
-  
-  
-  
-  
-    // let myInputEvent;
-    // let inputBox = createInput('');
-    // inputBox.position(250, 210);
-    // inputBox.size(400);
-    // inputBox.input(myInputEvent => {
-    //   if (myInputEvent.value === 'admin') {
-    //     console.log("Correct!");
-    //   }
-    // });
-  
+
   
